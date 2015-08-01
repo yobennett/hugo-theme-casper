@@ -1,4 +1,4 @@
-{{ $baseurl := .Site.BaseURL }}
+{{ $baseurl := .Site.BaseUrl }}
 <article class="post {{ .Section }}">
     <header class="post-header">
         <h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
@@ -8,7 +8,7 @@
     </section>
     <footer class="post-meta">
         {{if .Site.Params.logo }}
-            <img class="author-thumb" src="{{ .Site.BaseURL }}{{.Site.Params.logo}}" alt="Author image" nopin="nopin" />
+            <img class="author-thumb" src="{{ .Site.BaseUrl }}{{.Site.Params.logo}}" alt="Author image" nopin="nopin" />
         {{end}}
         {{if and (ne .Params.author .Site.Params.author) .Params.author}}
         {{$author := index .Site.Data.authors .Params.author }}
@@ -21,7 +21,7 @@
                 <a href="{{$baseurl}}tags/{{ $tag | urlize }}/">#{{ $tag }}</a>,
             {{ end }}
         {{end}}
-        <time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+        <time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHtml }}">
             {{ .Date.Format "2 Jan 2006" }}
         </time>
     </footer>

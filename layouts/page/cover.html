@@ -52,7 +52,7 @@
       
         <section class="post-meta">
         {{ if eq .Section "post"}}
-          <time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+          <time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHtml }}">
             {{ .Date.Format "Jan 2, 2006" }}
           </time>
         {{end}}
@@ -119,7 +119,7 @@
     {{ if ne .Params.share false}}
     <section class="share">
       <h4>Share this {{ if .Type }}{{.Type}}{{else}}post{{end}}</h4>
-      <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text={{ .Title | safeHTML}}&amp;url={{ .Permalink }}"
+      <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text={{ .Title | safeHtml}}&amp;url={{ .Permalink }}"
           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
           <span class="hidden">Twitter</span>
       </a>
